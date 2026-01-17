@@ -21,6 +21,4 @@ public class exponent {
         else
             return a*ans*ans;
     }
-    sc.close();
-
 }
