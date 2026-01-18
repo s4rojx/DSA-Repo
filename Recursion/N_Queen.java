@@ -33,6 +33,7 @@ public class N_Queen {
                 return false;
             }
         }
+        //this loop is for left upper column checking
         for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
             if (chess[i][j] == 1) {
                 return false;
