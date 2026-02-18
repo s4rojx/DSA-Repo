@@ -10,18 +10,22 @@ public class ArrayMax {
         for (int i = 0; i < arr.length; i++) {
             arr [i] = sc.nextInt();
         }
-        int max = maxOfArray(arr, 0, 2);
+        int max = maxOfArray(arr, 0);
         System.out.println(max);
     }
 
-    private static int maxOfArray(int[] arr, int idx, int ele) {
-        if(idx == arr.length){
-            return -1;
+    private static int maxOfArray(int[] arr, int idx) {
+        if(idx == arr.length - 1){
+            return arr[idx];
         }
-        else {
-            int f11 = maxOfArray(arr, idx+1, ele);
-            return f11;
+        int misa = maxOfArray(arr, idx+1);
+        if(arr[idx]> misa){
+            return arr[idx];
+        }
+        else{
+            return misa;
         }
     }
+
 
 }
