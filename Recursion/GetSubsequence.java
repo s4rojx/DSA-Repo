@@ -11,16 +11,16 @@ public class GetSubsequence {
     }
 
     public static ArrayList<String> gss(String str){
-    if(str.length() == 0) {
-        ArrayList <String> bres = new ArrayList<>();
+    if(str.length() == 0) { //base case
+        ArrayList <String> bres = new ArrayList<>(); //bres -> black result
         bres.add(" ");
         return bres;
     }
     char ch = str.charAt(0);
-    String ros = str.substring(1);
-    ArrayList <String> rres = gss(ros);
+    String ros = str.substring(1); //ros -> rest of string
+    ArrayList <String> rres = gss(ros); //rres -> recursive result
 
-        ArrayList <String> mres = new ArrayList<>();
+        ArrayList <String> mres = new ArrayList<>(); //my result
         for (String rstr: rres){
             mres.add(" " + rstr);
             mres.add(ch + rstr);
