@@ -15,6 +15,7 @@ public class CoinChange_1 {
         int dp[] = new int[amt+1];
         dp[0] = 1;
         //i loop iterates for coins (as per arr. index)
+        //in each step we can use only one coin to reduce permutations
         for (int i = 0; i < arr.length; i++) {
             //for any coin (say z) the loop runs from z to further
             //same has been done in the below loop

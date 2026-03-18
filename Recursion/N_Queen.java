@@ -9,17 +9,18 @@ public class N_Queen {
     }
 
     private static void printNQueens(int[][] chess, String qsf, int row) {
-        if (row == chess.length) {
+        int n = chess.length;
+        if (row == n) {
             System.out.println(qsf + ".");
             return;
         }
         //Jo parameter mai pass kiya jaata hai woh levels pe dikhai deti
         //Jo loops se aata hai woh options hote hain
         //Here row -> Levels(parameters) , col -> options of tree (Loops)
-        for (int col = 0; col < chess.length; col++) {
+        for (int col = 0; col < n; col++) {
             if (isItSafePlaceForQueen(chess, row, col) == true) {
                 chess[row][col] = 1;
-                printNQueens(chess, qsf + row + "-" + col + ", ", row + 1);
+                printNQueens(chess, qsf + row + "-" + col + ", ", row + 1);//Move top the next coloumn
                 chess[row][col] = 0;
             }
 

@@ -19,7 +19,8 @@ public class FloodFill {
     }
    public static void floodFill(int [][] maze, int row, int col, String psf, boolean [][] visited){
         // (maze[row][col] == 1) => This should be at the last only strictly
-       //if we place (maze[row][col] == 1) in first we will get ArrayIndexOutOfBound Exception
+       //if we place (maze[row][col] == 1) in first we will get ArrayIndexOutOfBound Exception for negative row or coloumn
+       //So better place that in the end
         if(row < 0 || col < 0 || row == maze.length || col == maze[0].length || maze[row][col] == 1 || visited[row][col] == true){
             return;
         }
@@ -27,7 +28,7 @@ public class FloodFill {
             System.out.println(psf);
             return;
         }
-        visited[row][col] = true;
+        visited[row][col] = true;//Before going into cell just mark it
        floodFill(maze, row - 1 , col ,psf + "t",visited);
        floodFill(maze, row, col - 1 ,psf + "l",visited);
        floodFill(maze, row + 1, col,psf + "d",visited);

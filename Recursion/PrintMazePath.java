@@ -14,7 +14,7 @@ public class PrintMazePath{
             return;
         }
         if(sc == dc && sr == dr){
-            System.out.print(psf+",");
+            System.out.print(psf+"  ");
             return;
         }
         pmp(sr,sc+1,dr,dc,psf+"h");
