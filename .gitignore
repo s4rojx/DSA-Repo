@@ -1,4 +1,7 @@
-*.class
+
 reitrate
 KnightTour2
 *.iml
+.idea/
+out/
+*.class
