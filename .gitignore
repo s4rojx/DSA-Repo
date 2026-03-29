@@ -1,7 +1,16 @@
-
-reitrate
-KnightTour2
-*.iml
+# IntelliJ
 .idea/
+*.iml
+
+# Build output
 out/
 *.class
+
+# OS
+.DS_Store
+Thumbs.db
+.cph/
+
+#Logs
+*.log
+*.tmp
