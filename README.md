@@ -11,6 +11,7 @@ I’m solving problems topic-wise and updating this regularly.
 - Number System  
 - Queues  
 - Recursion  
+- Best time to buy and sell stocks
 - Sliding Window  
 - Kadane’s Algorithm  
 
