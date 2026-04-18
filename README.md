@@ -10,7 +10,8 @@ I’m solving problems topic-wise and updating this regularly.
 - HashMaps & Heaps  
 - Number System  
 - Queues  
-- Recursion  
+- Recursion
+- Strings  
 - Best time to buy and sell stocks
 - Sliding Window  
 - Kadane’s Algorithm  
