@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class DIfferenece_of_ASCII {
+public class Print_Substrings {
 
     static class FastScanner {
         BufferedReader br;
@@ -49,14 +49,14 @@ public class DIfferenece_of_ASCII {
         FastScanner sc = new FastScanner();
         StringBuilder out = new StringBuilder();
         String str = sc.nextLine();
-        String s = String.valueOf(str.charAt(0));
-        for(int i=1;i<str.length();i++){
-            char chCurr = str.charAt(i);
-            char chPrev = str.charAt(i-1);
-            s += (int)(chCurr - chPrev) ;
-            s+= chCurr;
+        for (int i = 0; i < str.length(); i++) {
+            for (int j =i+1; j <=str.length(); j++) {
+                out.append(str.substring(i,j) +" ");
+            }
+            out.append("\n");
         }
-        out.append(s).append("\n");
+        //Code
+
         System.out.print(out);
     }
 }

@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class DIfferenece_of_ASCII {
+public class Duplicate_Brackets {
 
     static class FastScanner {
         BufferedReader br;
@@ -48,15 +48,26 @@ public class DIfferenece_of_ASCII {
     public static void main(String[] args) {
         FastScanner sc = new FastScanner();
         StringBuilder out = new StringBuilder();
-        String str = sc.nextLine();
-        String s = String.valueOf(str.charAt(0));
-        for(int i=1;i<str.length();i++){
-            char chCurr = str.charAt(i);
-            char chPrev = str.charAt(i-1);
-            s += (int)(chCurr - chPrev) ;
-            s+= chCurr;
+        String exp = sc.nextLine();
+        Stack <Character> st = new Stack<>();
+        for (int i = 0; i < exp.length(); i++) {
+            char ch = exp.charAt(i);
+            if(ch == ')'){
+                if(st.peek() == '('){
+                    System.out.println(true);
+                    return;
+                }else{
+                    while (st.peek() != '('){
+                        st.pop();
+                    }
+                    st.pop();
+                }
+            }else{
+                st.push(ch);
+            }
         }
-        out.append(s).append("\n");
+        //Code
+        out.append(false);
         System.out.print(out);
     }
 }

@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class DIfferenece_of_ASCII {
+public class Josephus {
 
     static class FastScanner {
         BufferedReader br;
@@ -48,15 +48,18 @@ public class DIfferenece_of_ASCII {
     public static void main(String[] args) {
         FastScanner sc = new FastScanner();
         StringBuilder out = new StringBuilder();
-        String str = sc.nextLine();
-        String s = String.valueOf(str.charAt(0));
-        for(int i=1;i<str.length();i++){
-            char chCurr = str.charAt(i);
-            char chPrev = str.charAt(i-1);
-            s += (int)(chCurr - chPrev) ;
-            s+= chCurr;
-        }
-        out.append(s).append("\n");
+        int n = sc.nextInt();
+
+        int hp2 = powerOf2(n);
+        int l = n-hp2;
+        out.append(2*l+1);
         System.out.print(out);
+    }
+    public static int powerOf2(int n){
+        int i= 1;
+        while(i*2 <= n){
+            i=i*2;
+        }
+        return i; // Returns highest achievable power of 2
     }
 }
