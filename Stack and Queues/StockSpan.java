@@ -17,9 +17,12 @@ public class StockSpan {
              while (!st.isEmpty() && arr[i]>arr[st.peek()]){
                 st.pop();
              }
+             //If stack empty then answer is (index+1)
              if(st.isEmpty()) {
                 ans[i]= i+1;
-             }else{
+             }
+             //if stack not empty then answer is (current index - tos index)
+             else{
                 ans[i]= i-st.peek();
              }
              st.push(i);
