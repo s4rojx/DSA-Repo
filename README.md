@@ -15,6 +15,7 @@ I’m solving problems topic-wise and updating this regularly.
 - Best time to buy and sell stocks
 - Sliding Window  
 - Kadane’s Algorithm  
+- LinkedList
 
 ## Language
 Java
