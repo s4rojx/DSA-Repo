@@ -21,4 +21,4 @@ I’m solving problems topic-wise and updating this regularly.
 Java
 
 ## Note
-Just practicing and improving step by step.
+Just practicing and improving day by day.
