@@ -12,13 +12,13 @@ public class LargestAreaHistogram {
         int[] rb = new int[n];// right boundary -> index of Next Smaller Element on the right
         Stack<Integer> st = new Stack<>();
         st.push(a.length - 1);
-        rb[a.length - 1] = a.length;
+        rb[a.length - 1] = a.length; // right side default arr.length
         for (int i = n - 2; i >= 0; i--) {
-            while (st.size() > 0 && a[st.peek()] >= a[i]) {
+            while (!st.isEmpty() && a[st.peek()] >= a[i]) {
                 st.pop();
             }
 
-            if (st.size() == 0) {
+            if (st.isEmpty()) {
                 rb[i] = n;
             } else {
                 rb[i] = st.peek();
@@ -34,11 +34,11 @@ public class LargestAreaHistogram {
         lb[0] = -1;
 
         for (int i = 1; i < n; i++) {
-            while (st.size() > 0 && a[st.peek()] >= a[i]) {
+            while (!st.isEmpty() && a[st.peek()] >= a[i]) {
                 st.pop();
             }
 
-            if (st.size() == 0) {
+            if (st.isEmpty()) {
                 lb[i] = -1;
             } else {
                 lb[i] = st.peek();
