@@ -1,7 +1,9 @@
+package Stack;
+
 import java.io.*;
 import java.util.*;
 
-public class NextGreaterElementAlt {
+public class NextGreaterElement {
 
     static class FastScanner {
         BufferedReader br;
@@ -55,24 +57,21 @@ public class NextGreaterElementAlt {
             arr[i] = sc.nextInt();
         }
         int [] nge = new int[n];
-        //Here dont put element ot stack rather put the index of the element to stack
-        st.push(0);
-        for(int i=1;i<n;i++){
-            while(!st.isEmpty() && arr[i]>arr[st.peek()]){
-                int pos = st.peek();
-                nge[pos] = arr[i];
+        st.push(arr[n-1]);
+        nge[n-1] =  -1;
+        for(int i=n-2 ; i>=0;i--){
+            while(st.size()>0 && arr[i]>=st.peek()){
                 st.pop();
-
             }
-            st.push(i);
+            if(st.isEmpty()){
+                nge [i] = -1;
+            }
+            else{
+                nge[i] = st.peek();
+            }
+            st.push(arr[i]);
         }
-            while(st.size() > 0){
-                int pos = st.peek();
-                nge[pos] = -1;
-                st.pop();
-            }
-
-        out.append(Arrays.toString(nge));
+        out.append(Arrays.toString(nge)).append("\n");
 
         System.out.print(out);
     }

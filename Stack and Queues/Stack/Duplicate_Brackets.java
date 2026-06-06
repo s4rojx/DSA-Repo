@@ -1,7 +1,9 @@
+package Stack;
+
 import java.io.*;
 import java.util.*;
 
-public class NextGreaterElement {
+public class Duplicate_Brackets {
 
     static class FastScanner {
         BufferedReader br;
@@ -48,29 +50,26 @@ public class NextGreaterElement {
     public static void main(String[] args) {
         FastScanner sc = new FastScanner();
         StringBuilder out = new StringBuilder();
-        Stack<Integer> st = new Stack<>();
-        int n = sc.nextInt();
-        int [] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
+        String exp = sc.nextLine();
+        Stack <Character> st = new Stack<>();
+        for (int i = 0; i < exp.length(); i++) {
+            char ch = exp.charAt(i);
+            if(ch == ')'){
+                if(st.peek() == '('){
+                    System.out.println(true);
+                    return;
+                }else{
+                    while (st.peek() != '('){
+                        st.pop();
+                    }
+                    st.pop();
+                }
+            }else{
+                st.push(ch);
+            }
         }
-        int [] nge = new int[n];
-        st.push(arr[n-1]);
-        nge[n-1] =  -1;
-        for(int i=n-2 ; i>=0;i--){
-            while(st.size()>0 && arr[i]>=st.peek()){
-                st.pop();
-            }
-            if(st.isEmpty()){
-                nge [i] = -1;
-            }
-            else{
-                nge[i] = st.peek();
-            }
-            st.push(arr[i]);
-        }
-        out.append(Arrays.toString(nge)).append("\n");
-
+        //Code
+        out.append(false);
         System.out.print(out);
     }
 }

@@ -1,7 +1,9 @@
+package Stack;
+
 import java.io.*;
 import java.util.*;
 
-public class Duplicate_Brackets {
+public class NextGreaterElementAlt {
 
     static class FastScanner {
         BufferedReader br;
@@ -48,26 +50,32 @@ public class Duplicate_Brackets {
     public static void main(String[] args) {
         FastScanner sc = new FastScanner();
         StringBuilder out = new StringBuilder();
-        String exp = sc.nextLine();
-        Stack <Character> st = new Stack<>();
-        for (int i = 0; i < exp.length(); i++) {
-            char ch = exp.charAt(i);
-            if(ch == ')'){
-                if(st.peek() == '('){
-                    System.out.println(true);
-                    return;
-                }else{
-                    while (st.peek() != '('){
-                        st.pop();
-                    }
-                    st.pop();
-                }
-            }else{
-                st.push(ch);
-            }
+        Stack<Integer> st = new Stack<>();
+        int n = sc.nextInt();
+        int [] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
         }
-        //Code
-        out.append(false);
+        int [] nge = new int[n];
+        //Here dont put element ot stack rather put the index of the element to stack
+        st.push(0);
+        for(int i=1;i<n;i++){
+            while(!st.isEmpty() && arr[i]>arr[st.peek()]){
+                int pos = st.peek();
+                nge[pos] = arr[i];
+                st.pop();
+
+            }
+            st.push(i);
+        }
+            while(st.size() > 0){
+                int pos = st.peek();
+                nge[pos] = -1;
+                st.pop();
+            }
+
+        out.append(Arrays.toString(nge));
+
         System.out.print(out);
     }
 }
