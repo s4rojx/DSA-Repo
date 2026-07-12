@@ -15,6 +15,9 @@ public class FirstIndex {
     }
 
     private static int firstidx(int[] arr, int idx, int ele) {
+        if(idx == arr.length){
+            return -1;
+        }
         if(arr[idx]==ele)
             return idx;
         else{
