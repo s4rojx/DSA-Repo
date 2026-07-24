@@ -1,4 +1,4 @@
-package BinaryTreeImplemetations;
+package BinaryTree;
 
 
 //
