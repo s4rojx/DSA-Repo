@@ -76,7 +76,7 @@ public class BFS {
 
     }
 
-    public static class Pair {
+   private static class Pair {
         Node node;
         int state;
 
@@ -86,7 +86,7 @@ public class BFS {
         }
     }
 
-    public static class Node {
+   private static class Node {
         int data;
         Node left;
         Node right;
