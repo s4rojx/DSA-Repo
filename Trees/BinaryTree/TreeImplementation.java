@@ -11,6 +11,16 @@ class Node {
     }
 }
 
+class Pair {
+    Node node;
+    int level;
+
+    Pair(Node node, int level) {
+        this.node = node;
+        this.level = level;
+    }
+}
+
 class TreeImplementation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -29,11 +39,31 @@ class TreeImplementation {
         c.right = g;
         display(a);
         System.out.println();
-        System.out.println("Size is: "+size(a));
-        System.out.println("Sum is: "+sum(a));
-        System.out.println("Levels are: "+levels(a));
+        System.out.println("Size is: " + size(a));
+        System.out.println("Sum is: " + sum(a));
+        System.out.println("Levels are: " + levels(a));
+
+        levelOrder(a);
 
 
+    }
+
+    private static void levelOrder(Node root) {
+        Queue<Pair> q = new LinkedList<>();
+        int currentLevel = 0;
+        q.add(new Pair(root, 0));
+        while (!q.isEmpty()) {
+            Pair front = q.remove();
+            if (front.level != currentLevel) {
+                currentLevel++;
+                System.out.println();
+            }
+            System.out.print(front.node.val + " ");
+            if (front.node.left != null)
+                q.add(new Pair(front.node.left, front.level + 1));
+            if (front.node.right != null)
+                q.add(new Pair(front.node.right, front.level + 1));
+        }
     }
 
     private static int levels(Node root) {
