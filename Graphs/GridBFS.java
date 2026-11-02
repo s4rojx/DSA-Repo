@@ -8,7 +8,7 @@ public class GridBFS {
             this.s = s;
         }
     }
-    // Grid dimensions and storage
+    // Grid dimensions and storage part  of code
     static int n, m;
     static String[] arr;
     static int[][] dist;
