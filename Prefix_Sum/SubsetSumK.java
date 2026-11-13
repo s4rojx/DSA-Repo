@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class SubsetSumK {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -11,7 +10,6 @@ public class SubsetSumK {
         }
         System.out.println(subsetCount(arr, k));
     }
-
     static int subsetCount(int arr[], int k) {
         int n = arr.length;
         HashMap<Integer, Integer> map = new HashMap<>();
