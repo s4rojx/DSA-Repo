@@ -12,7 +12,6 @@ public class MaximumSumOfSubArray {
         }
         System.out.println(solve(arr));
     }
-
     private static int solve(int[] nums) {
         int csum = nums[0], osum = nums[0];
         for (int i = 1; i < nums.length; i++) {
