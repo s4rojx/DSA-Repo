@@ -9,7 +9,8 @@ I’m solving problems topic-wise and updating this regularly.
 - Dynamic Programming  
 - HashMaps & Heaps  
 - Number System  
-- Queues  
+- Queues 
+- Stacks 
 - Recursion
 - Strings  
 - Best time to buy and sell stocks
@@ -22,3 +23,4 @@ Java
 
 ## Note
 Just practicing and improving day by day.
+
